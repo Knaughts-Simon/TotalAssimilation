@@ -3,6 +3,8 @@
 # from = country
 # this = species
 citizenship_assimilation = {
+	# New citizenships cannot be created by mod.
+	# Modifying existing Assimilation to replace pop with starting species
 	token = citizenship_assimilation
 
 	potential = {
@@ -31,8 +33,8 @@ citizenship_assimilation = {
 				has_country_flag = flesh_weakened
 			}
 			from = {
+				# Changed: All biologically ascended empires can assimilate, even gestalt
 				has_ascension_perk = ap_evolutionary_mastery
-				NOT = { has_ethic = ethic_gestalt_consciousness }
 			}
 			# psionic assimilation
 			from = {
@@ -98,21 +100,7 @@ citizenship_assimilation = {
 				}
 			}
 		}
-		custom_tooltip = { # synthetically ascended empire
-			fail_text = SYNTH_SPECIES_MUST_BE_ORGANIC
-			OR = {
-				from = { NOT = { has_country_flag = synthetic_empire } }
-				AND = {
-					from = {
-						has_country_flag = synthetic_empire
-					}
-					NOR = {
-						has_trait = trait_mechanical
-						has_trait = trait_machine_unit
-					}
-				}
-			}
-		}
+		# Changed: Synthetically ascended empire can now assimilate other machines
 		custom_tooltip = { # cyborg empire
 			fail_text = CYBORG_SPECIES_MUST_BE_ORGANIC
 			OR = {
@@ -133,52 +121,20 @@ citizenship_assimilation = {
 			}
 		}
 		custom_tooltip = {
-			fail_text = DEFAULT_SPECIES_MUST_BE_HIVE
+			# Changed: cyborg pops can be assimilated by mutation, even by hive minds,
+			# but robotic species cannot
+			fail_text = SPECIES_MUST_BE_NONROBOTIC_FOR_MUTATIVE_ASSIMILATION
 			OR = {
 				from = {
-					OR = {
-						has_country_flag = flesh_weakened
-						has_country_flag = synthetic_empire
-						has_ethic = ethic_gestalt_consciousness
+					NOR = {
 						has_ascension_perk = ap_transcendence
-					}
-				}
-				AND = {
-					has_trait = trait_hive_mind
-					from = {
 						has_ascension_perk = ap_evolutionary_mastery
-						NOR = {
-							has_ethic = ethic_gestalt_consciousness
-							has_country_flag = flesh_weakened
-							has_country_flag = synthetic_empire
-						}
 					}
 				}
+				is_robotic_species = no
 			}
 		}
-		custom_tooltip = { # species must be organic to transcend
-			fail_text = TRANSCENDING_SPECIES_MUST_BE_ORGANIC
-			OR = {
-				from = { NOT = { has_ascension_perk = ap_transcendence } }
-				AND = {
-					from = { has_ascension_perk = ap_transcendence }
-					is_robotic_species = no
-					NOT = { has_trait = trait_cybernetic }
-				}
-			}
-		}
-		custom_tooltip = { # species already has psionic trait
-			fail_text = TRANSCENDING_SPECIES_IS_ALREADY_PSIONIC
-			OR = {
-				from = { NOT = { has_ascension_perk = ap_transcendence } }
-				AND = {
-					from = { has_ascension_perk = ap_transcendence }
-					NOT = {
-						has_trait = trait_psionic
-					}
-				}
-			}
-		}
+		# Changed: Psionic species can now be assimilated, even into a psionically ascended empire
 		custom_tooltip = { # transcending species cannot be gestalt consciousness
 			fail_text = TRANSCENDING_SPECIES_CANT_BE_HIVE
 			OR = {
