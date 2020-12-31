@@ -1,2 +1,3 @@
 ﻿l_english:
   SPECIES_MUST_BE_NONROBOTIC_FOR_MUTATIVE_ASSIMILATION: "Robots cannot be assimilated by mutation"
+  HIVE_SPECIES_MUST_BE_ORGANIC: "$TRIGGER_FAIL$Requires §Y$ap_evolutionary_mastery$§!. Only organic species can be assimilated by a §Y$auth_hive_mind$§!."

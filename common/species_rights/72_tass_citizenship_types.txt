@@ -83,7 +83,9 @@ citizenship_assimilation = {
 			}
 		}
 		custom_tooltip = { # non-devouring hive mind
-			fail_text = HIVE_SPECIES_MUST_BE_NON_HIVE
+			# Changed: Non-devouring hive minds can now assimilate other hive minds'
+			# drones by mutation (but still not robots).
+			fail_text = HIVE_SPECIES_MUST_BE_ORGANIC
 			OR = {
 				from = { NOT = { has_authority = auth_hive_mind } }
 				AND = {
@@ -93,7 +95,6 @@ citizenship_assimilation = {
 						NOT = { has_civic = civic_hive_devouring_swarm }
 					}
 					NOR = {
-						has_trait = trait_hive_mind
 						has_trait = trait_mechanical
 						has_trait = trait_machine_unit
 					}
