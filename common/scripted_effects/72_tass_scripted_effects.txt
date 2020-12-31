@@ -16,6 +16,7 @@ assimilation_effect = {
 						has_country_flag = synthetic_empire
 						has_ascension_perk = ap_transcendence
 						has_ascension_perk = ap_evolutionary_mastery
+						has_authority = auth_machine_intelligence
 					}
 				}
 			}
