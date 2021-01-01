@@ -1,5 +1,4 @@
 # From common\scripted_effects\00_scripted_effects.txt#10309
-
 # root/this = planet
 assimilation_effect = {
 	random_owned_pop = {
@@ -9,7 +8,8 @@ assimilation_effect = {
 				country = root.owner
 			}
 		}
-		if = { # Changed: replace pops, rather than convert species, in most cases (excludes cyborg empire)
+		if = {
+			# Changed: replace pops, rather than convert species, in most cases (excludes cyborg empire)
 			limit = {
 				root.owner = {
 					OR = {
@@ -27,6 +27,7 @@ assimilation_effect = {
 					ethos = root.owner
 				}
 			}
+			apply_post_assimilation_effects = yes
 		}
 		else = {
 			random_galaxy_species = {
@@ -41,7 +42,7 @@ assimilation_effect = {
 			}
 			if = {
 				limit = {
-					exists = event_target:convert_to_species #should always exist
+					exists = event_target:convert_to_species					#should always exist
 				}
 				change_species = event_target:convert_to_species
 				root = {
@@ -49,7 +50,8 @@ assimilation_effect = {
 						which = assimilation_counter
 						value = -1
 					}
-					while = { #to avoid doing the random_galaxy_species thing too many times
+					while = {
+						#to avoid doing the random_galaxy_species thing too many times
 						limit = {
 							exists = event_target:old_species
 							check_variable = {
