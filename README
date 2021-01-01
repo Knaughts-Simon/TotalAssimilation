@@ -1,0 +1,34 @@
+Assimilation does more.
+
+Specifically:
+[olist]
+    [*]All biologically ascended empires can now assimilate organic pops (including cyborgs). Previously, only biologically ascended hive minds could assimilate, and even then only non-hive mind pops.
+    [*]Psionically ascended empires can now assimilate cyborgs (There's still a soul in there, just tear out all the metal bits!)
+    [*]Synthetically ascended empires can now assimilate other machines. Previously, they could only assimilate organics. (No reason we can't build a better shell, and upload the alien intelligence into it!)
+    [*]Machine Empires can now assimilate other robots. This means Driven Assimilators can assimilate [i]anything[/i], as seems appropriate from their name.
+    [*]Most impactfully, biologically and psionically ascended empires, and machine empires, assimilate by replacement rather than by adding traits. This functions much the same way synthetically ascended empires normally assimilate.
+[/olist]
+
+[h2]Installation[/h2]
+
+Since citizenship types and living standards are hard-coded into the game, we needed to overwrite three vanilla objects. This means the mod needs to be low in your load-list, and that it will conflict with any other mods that override these objects.
+
+[code]
+assimilation_effect
+citizenship_assimilation
+living_standard_psi_assimilation
+[/code]
+
+[h2]Feedback[/h2]
+
+Feedback is welcome in the comments, but look at Known Issues below, first.
+
+[h2]Known Issues[/h2]
+Since these are minor and/or nontrivial to fix, I have no immediate plans to fix them. Let me know in comments if it particularly irks you.
+
+[list]
+    [*]Driven Assimilators immediately start converting their cyborgs into robots; this is intended, but ideally they would start the game with all robots.
+    [*]The Driven Assimilator Colossus weapon, Nanobot Diffuser, is implemented completely independently from assimilation, so its behavior is unaffected by this mod. That means it kills drones, and converts organics to cyborgs. These cyborgs can be converted, gradually, into the primary species of the Driven Assimilator. Ideally, the weapon would have the same effect as assimilation: converting all pops to the primary species.
+    [*]When a Machine Empire is assimilating a robot, its Living Standard is Drone, which is technically invalid and doesn't make much sense in-game. Ideally the robot would have some new Living Standard with decreased functionality during assimilation. Maybe increase Deviancy, since the Happiness penalty that other empires experience during assimilation doesn't make sense if the robot is not conscious?
+    [*]Hive Minds and Driven Assimilator Machine Empires have two redundant Living Standards: Identity Sublimation and Mutative Assimilation. One of these should be removed, and neither of them make sense when assimilating a Drone from another Hive Mind. As mentioned above, there should probably be a new Living Standard for this situation, with increased Deviancy.
+[/list]
