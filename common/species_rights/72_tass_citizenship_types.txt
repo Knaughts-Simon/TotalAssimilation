@@ -15,9 +15,9 @@ citizenship_assimilation = {
 		exists = from
 		NOT = { from = { has_civic = civic_fanatic_purifiers } }
 		OR = {
-			from = { # machine assimilator
+			from = {
+				# Changed: All Machine Empires have the potential to assimilate
 				has_authority = auth_machine_intelligence
-				has_civic = civic_machine_assimilator
 			}
 			AND = {
 				from = { # non-devouring hive mind
@@ -65,21 +65,16 @@ citizenship_assimilation = {
 			fail_text = "disconnected_machine_pops_collapse_citizenship"
 			is_disconnected_machine_pop = no
 		}
-		custom_tooltip = { # machine assimilator
-			fail_text = MACHINE_SPECIES_MUST_BE_ORGANIC
+		custom_tooltip = { # machine empires
+			# Changed: Machine Empires can not assimilate all robots, and Driven Assimilators can assimilate anyone
+			fail_text = MACHINE_SPECIES_MUST_BE_ROBOTIC
 			OR = {
 				from = { NOT = { has_authority = auth_machine_intelligence } }
-				AND = {
-					from = {
-						has_authority = auth_machine_intelligence
-						has_civic = civic_machine_assimilator
-					}
-					NOR = {
-						has_trait = trait_mechanical
-						has_trait = trait_machine_unit
-						has_trait = trait_cybernetic
-					}
+				from = {
+					has_civic = civic_machine_assimilator
 				}
+				has_trait = trait_mechanical
+				has_trait = trait_machine_unit
 			}
 		}
 		custom_tooltip = { # non-devouring hive mind
