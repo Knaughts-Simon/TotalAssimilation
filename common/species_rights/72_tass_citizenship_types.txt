@@ -13,32 +13,25 @@ citizenship_assimilation = {
 			host_has_dlc = "Utopia"
 		}
 		exists = from
-		NOT = { from = { has_civic = civic_fanatic_purifiers } }
-		OR = {
-			from = {
-				# Changed: All Machine Empires have the potential to assimilate
-				has_authority = auth_machine_intelligence
-			}
-			AND = {
-				from = { # non-devouring hive mind
+		from = {
+			NOT = { has_civic = civic_fanatic_purifiers }
+			OR = {
+				AND = { # machine assimilator
+					has_authority = auth_machine_intelligence
+					has_civic = civic_machine_assimilator
+				}
+				AND = { # non-devouring hive mind
 					has_authority = auth_hive_mind
 					NOT = { has_civic = civic_hive_devouring_swarm }
+					ROOT = { is_robotic_species = no }
 				}
-				is_robotic_species = no
-			}
-			from = { # synthetically ascended empire
-				has_country_flag = synthetic_empire
-			}
-			from = { # cyborg empire
-				has_country_flag = flesh_weakened
-			}
-			from = {
-				# Changed: All biologically ascended empires can assimilate, even gestalt
-				has_ascension_perk = ap_evolutionary_mastery
-			}
-			# psionic assimilation
-			from = {
-				has_ascension_perk = ap_transcendence
+				AND = {
+					has_ascension_perk = ap_evolutionary_mastery
+					NOT = { has_ethic = ethic_gestalt_consciousness }
+				}
+				has_country_flag = synthetic_empire # synthetically ascended empire
+				has_country_flag = flesh_weakened # cyborg empire
+				has_ascension_perk = ap_transcendence # psionic assimilation
 			}
 		}
 	}
@@ -50,14 +43,11 @@ citizenship_assimilation = {
 			NOT = { is_exact_same_species = from }
 		}
 		custom_tooltip = {
-			fail_text = "lonely_hive_mind_pops_kill_themselves_citizenship"
-			OR = {
-				is_lonely_hive_mind_pop = no
-				AND = {
-					is_lonely_hive_mind_pop = yes
-					from = {
-						has_ascension_perk = ap_evolutionary_mastery
-					}
+			fail_text = "lonely_hive_mind_pops_kill_themselves_citizenship_assimilation"
+			if = {
+				limit = { is_lonely_hive_mind_pop = yes }
+				from = {
+					has_ascension_perk = ap_evolutionary_mastery
 				}
 			}
 		}
@@ -65,82 +55,91 @@ citizenship_assimilation = {
 			fail_text = "disconnected_machine_pops_collapse_citizenship"
 			is_disconnected_machine_pop = no
 		}
-		custom_tooltip = { # machine empires
-			# Changed: Machine Empires can not assimilate all robots, and Driven Assimilators can assimilate anyone
-			fail_text = MACHINE_SPECIES_MUST_BE_ROBOTIC
-			OR = {
-				from = { NOT = { has_authority = auth_machine_intelligence } }
-				from = {
-					has_civic = civic_machine_assimilator
+		if = {
+			limit = {
+				from = { has_authority = auth_machine_intelligence }
+			}
+			custom_tooltip = { # machine assimilator
+				fail_text = MACHINE_SPECIES_MUST_BE_ORGANIC
+				NOR = {
+					has_trait = trait_mechanical
+					has_trait = trait_machine_unit
+					has_trait = trait_cybernetic
 				}
 				has_trait = trait_mechanical
 				has_trait = trait_machine_unit
 			}
 		}
-		custom_tooltip = { # non-devouring hive mind
-			# Changed: Non-devouring hive minds can now assimilate other hive minds'
-			# drones by mutation (but still not robots).
-			fail_text = HIVE_SPECIES_MUST_BE_ORGANIC
-			OR = {
-				from = { NOT = { has_authority = auth_hive_mind } }
-				AND = {
-					from = {
-						has_authority = auth_hive_mind
-						has_ascension_perk = ap_evolutionary_mastery
-						NOT = { has_civic = civic_hive_devouring_swarm }
-					}
-					NOR = {
-						has_trait = trait_mechanical
-						has_trait = trait_machine_unit
-					}
-				}
+		else_if = {
+			limit = {
+				from = { has_authority = auth_hive_mind }
 			}
-		}
-		# Changed: Synthetically ascended empire can now assimilate other machines
-		custom_tooltip = { # cyborg empire
-			fail_text = CYBORG_SPECIES_MUST_BE_ORGANIC
-			OR = {
-				from = { NOT = { has_country_flag = flesh_weakened } }
-				AND = {
-					from = {
-						has_country_flag = flesh_weakened
-					}
-					NOR = {
-						has_trait = trait_mechanical
-						has_trait = trait_machine_unit
-						AND = {
-							has_trait = trait_cybernetic
-							from = { NOT = { has_country_flag = synthetic_empire } }
-						}
-					}
-				}
-			}
-		}
-		custom_tooltip = {
-			# Changed: cyborg pops can be assimilated by mutation, even by hive minds,
-			# but robotic species cannot
-			fail_text = SPECIES_MUST_BE_NONROBOTIC_FOR_MUTATIVE_ASSIMILATION
-			OR = {
+			custom_tooltip = { # non-devouring hive mind
+				fail_text = HIVE_SPECIES_MUST_BE_NON_HIVE
 				from = {
-					NOR = {
-						has_ascension_perk = ap_transcendence
-						has_ascension_perk = ap_evolutionary_mastery
+					has_ascension_perk = ap_evolutionary_mastery
+				}
+				NOR = {
+					has_trait = trait_hive_mind
+					has_trait = trait_mechanical
+					has_trait = trait_machine_unit
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				from = { has_country_flag = synthetic_empire }
+			}
+			custom_tooltip = { # synthetically ascended empire
+				fail_text = SYNTH_SPECIES_MUST_BE_ORGANIC
+				NOR = {
+					has_trait = trait_mechanical
+					has_trait = trait_machine_unit
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				from = { has_country_flag = flesh_weakened }
+			}
+			custom_tooltip = { # cyborg empire
+				fail_text = CYBORG_SPECIES_MUST_BE_ORGANIC
+				NOR = {
+					has_trait = trait_mechanical
+					has_trait = trait_machine_unit
+					AND = {
+						has_trait = trait_cybernetic
+						from = { NOT = { has_country_flag = synthetic_empire } }
 					}
 				}
 				is_robotic_species = no
 			}
 		}
-		# Changed: Psionic species can now be assimilated, even into a psionically ascended empire
-		custom_tooltip = { # transcending species cannot be gestalt consciousness
-			fail_text = TRANSCENDING_SPECIES_CANT_BE_HIVE
-			OR = {
-				from = { NOT = { has_ascension_perk = ap_transcendence } }
-				AND = {
-					from = { has_ascension_perk = ap_transcendence }
-					NOT = {
-						has_trait = trait_hive_mind
-					}
-				}
+		else_if = {
+			limit = {
+				from = { has_ascension_perk = ap_transcendence }
+			}
+			custom_tooltip = { # species must be organic to transcend
+				fail_text = TRANSCENDING_SPECIES_MUST_BE_ORGANIC
+				is_robotic_species = no
+				NOT = { has_trait = trait_cybernetic }
+			}
+			custom_tooltip = { # species already has psionic trait
+				fail_text = TRANSCENDING_SPECIES_IS_ALREADY_PSIONIC
+				NOT = { has_trait = trait_psionic }
+			}
+			custom_tooltip = { # transcending species cannot be gestalt consciousness
+				fail_text = TRANSCENDING_SPECIES_CANT_BE_HIVE
+				NOT = { has_trait = trait_hive_mind }
+			}
+		}
+		else_if = {
+			limit = {
+				from = { has_ascension_perk = ap_evolutionary_mastery }
+			}
+			custom_tooltip = {
+				fail_text = CAN_ONLY_ASSIMILATE_HIVES
+				has_trait = trait_hive_mind
 			}
 		}
 	}
