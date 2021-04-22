@@ -8,6 +8,7 @@ Specifically:
     [*]Machine Empires can now assimilate other robots. This means Driven Assimilators can assimilate [i]anything[/i], as seems appropriate from their name.
     [*]Most impactfully, biologically and psionically ascended empires, and machine empires, assimilate by replacement rather than by adding traits. This functions much the same way synthetically ascended empires normally assimilate.
 [/olist]
+[img]https://i.imgur.com/fVVaDCS.gif[/img]
 
 [h2]Installation[/h2]
 
@@ -18,6 +19,8 @@ assimilation_effect
 citizenship_assimilation
 living_standard_psi_assimilation
 [/code]
+
+If you're running a mod that overrides any of these, try using [url=https://bcssov.github.io/IronyModManager/]Irony Mod Manager[/url] to resolve the conflict.
 
 [h2]Feedback[/h2]
 
