@@ -1,9 +1,9 @@
-version="0.0.1"
+version="1.0.0"
 tags={
 	"Gameplay"
 	"Species"
 }
 name="Total Assimilation"
 picture="thumbnail.png"
-supported_version="2.8.1"
+supported_version="3.0.2"
 remote_file_id="2296011997"
