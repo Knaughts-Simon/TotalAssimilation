@@ -90,19 +90,21 @@ citizenship_assimilation = {
 		}
 		# Changed: Synthetically ascended empire can now assimilate other machines
 		
-		else_if = {
+		else_if = { # cyborg empire
+			# Changed: since synthetically ascended empires are not handled above,
+			# exclude them here
 			limit = {
-				from = { has_country_flag = flesh_weakened }
+				from = {
+					has_country_flag = flesh_weakened
+					NOT = { has_country_flag = synthetic_empire }
+				}
 			}
-			custom_tooltip = { # cyborg empire
+			custom_tooltip = {
 				fail_text = CYBORG_SPECIES_MUST_BE_ORGANIC
 				NOR = {
 					has_trait = trait_mechanical
 					has_trait = trait_machine_unit
-					AND = {
-						has_trait = trait_cybernetic
-						from = { NOT = { has_country_flag = synthetic_empire } }
-					}
+					has_trait = trait_cybernetic
 				}
 				is_robotic_species = no
 			}
