@@ -1,4 +1,4 @@
-# From common\scripted_effects\00_scripted_effects.txt#10309
+# From common\scripted_effects\00_scripted_effects.txt#4972
 
 # root/this = planet
 assimilation_effect = {
@@ -9,10 +9,22 @@ assimilation_effect = {
 				country = root.owner
 			}
 		}
-		if = { # ascended synths
+		if = { # Has Synth Assimilation
 			limit = {
-				root.owner = {
-					has_country_flag = synthetic_empire
+				OR = {
+					root.owner = {
+						has_country_flag = synth_assimilation
+					}
+					AND = {
+						OR = {
+							has_trait = trait_mechanical
+							has_trait = trait_machine_unit
+						}
+						root.owner = {
+							has_authority = auth_machine_intelligence
+							has_active_tradition = tr_synthetics_adopt_machine
+						}
+					}
 				}
 			}
 			kill_pop = yes
@@ -63,7 +75,7 @@ assimilation_effect = {
 								which = assimilation_counter
 								value > 0
 							}
-							any_owned_species = {
+							any_owned_pop = {
 								is_same_value = event_target:old_species
 							}
 						}

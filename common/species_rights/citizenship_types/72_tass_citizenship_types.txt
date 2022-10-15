@@ -1,9 +1,9 @@
-# From common\species_rights\00_citizenship_types.txt#105
+# From common\species_rights\00_citizenship_types.txt#107
 
 # from = country
 # this = species
 citizenship_assimilation = {
-	token = citizenship_assimilation
+	is_assimilation = yes
 
 	potential = {
 		OR = {
@@ -12,11 +12,25 @@ citizenship_assimilation = {
 		}
 		exists = from
 		from = {
-			NOT = { has_civic = civic_fanatic_purifiers }
+			is_homicidal = no
 			OR = {
 				AND = { # machine assimilator
 					has_authority = auth_machine_intelligence
 					has_civic = civic_machine_assimilator
+					root = {
+						NOR = {
+							has_trait = trait_mechanical
+							has_trait = trait_machine_unit
+							has_trait = trait_cybernetic
+						}
+					}
+				}
+				AND = { # machine assimilator
+					has_authority = auth_machine_intelligence
+					has_active_tradition = tr_synthetics_adopt_machine
+					root = {
+						is_robotic_species = yes
+					}
 				}
 				AND = { # non-devouring hive mind
 					has_authority = auth_hive_mind
@@ -24,12 +38,15 @@ citizenship_assimilation = {
 					ROOT = { is_robotic_species = no }
 				}
 				AND = {
-					has_ascension_perk = ap_evolutionary_mastery
+					has_tradition = tr_genetics_creation
 					NOT = { has_ethic = ethic_gestalt_consciousness }
 				}
-				has_country_flag = synthetic_empire # synthetically ascended empire
-				has_country_flag = flesh_weakened # cyborg empire
-				has_ascension_perk = ap_transcendence # psionic assimilation
+				AND = {
+					has_tradition = tr_synthetics_synthetic_age # synth assimilation
+					NOT = { has_authority = auth_machine_intelligence }
+				}
+				has_tradition = tr_cybernetics_transubstantiation_synthesis # cybernetic assimilation
+				has_tradition = tr_psionics_psionic_assimilation # psionic assimilation
 			}
 		}
 	}
@@ -45,7 +62,11 @@ citizenship_assimilation = {
 			if = {
 				limit = { is_lonely_hive_mind_pop = yes }
 				from = {
-					has_ascension_perk = ap_evolutionary_mastery
+					OR = {
+						has_tradition = tr_genetics_creation
+						has_tradition = tr_cybernetics_transubstantiation_synthesis
+						has_tradition = tr_cybernetics_assimilator_inevitable_assimilation
+					}
 				}
 			}
 		}
@@ -55,15 +76,15 @@ citizenship_assimilation = {
 		}
 		if = {
 			limit = {
-				from = { has_authority = auth_machine_intelligence }
+				from = {
+					has_authority = auth_machine_intelligence
+				}
 			}
 			custom_tooltip = { # machine assimilator
 				fail_text = MACHINE_SPECIES_MUST_BE_ORGANIC
-				NOR = {
-					has_trait = trait_mechanical
-					has_trait = trait_machine_unit
-					has_trait = trait_cybernetic
-				}
+			}
+			custom_tooltip = { 
+				fail_text = requires_tradition_tr_synthetics_adopt
 			}
 		}
 		else_if = {
@@ -73,7 +94,10 @@ citizenship_assimilation = {
 			custom_tooltip = { # non-devouring hive mind
 				fail_text = HIVE_SPECIES_MUST_BE_NON_HIVE
 				from = {
-					has_ascension_perk = ap_evolutionary_mastery
+					OR = {
+						has_tradition = tr_genetics_creation
+						has_tradition = tr_cybernetics_transubstantiation_synthesis
+					}
 				}
 				NOR = {
 					has_trait = trait_hive_mind
@@ -96,23 +120,20 @@ citizenship_assimilation = {
 		}
 		else_if = {
 			limit = {
-				from = { has_country_flag = flesh_weakened }
+				from = { has_tradition = tr_cybernetics_transubstantiation_synthesis }
 			}
 			custom_tooltip = { # cyborg empire
 				fail_text = CYBORG_SPECIES_MUST_BE_ORGANIC
 				NOR = {
 					has_trait = trait_mechanical
 					has_trait = trait_machine_unit
-					AND = {
-						has_trait = trait_cybernetic
-						from = { NOT = { has_country_flag = synthetic_empire } }
-					}
+					has_trait = trait_cybernetic
 				}
 			}
 		}
 		else_if = {
 			limit = {
-				from = { has_ascension_perk = ap_transcendence }
+				from = { has_tradition = tr_psionics_psionic_assimilation }
 			}
 			custom_tooltip = { # species must be organic to transcend
 				fail_text = TRANSCENDING_SPECIES_MUST_BE_ORGANIC
@@ -130,7 +151,7 @@ citizenship_assimilation = {
 		}
 		else_if = {
 			limit = {
-				from = { has_ascension_perk = ap_evolutionary_mastery }
+				from = { has_tradition = tr_genetics_creation }
 			}
 			custom_tooltip = {
 				fail_text = CAN_ONLY_ASSIMILATE_HIVES
