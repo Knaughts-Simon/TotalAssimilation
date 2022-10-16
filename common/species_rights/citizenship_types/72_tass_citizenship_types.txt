@@ -24,19 +24,12 @@ citizenship_assimilation = {
 					has_active_tradition = tr_synthetics_adopt_machine
 					# Changed: Allow machine to assimilate non-robots
 				}
-				AND = { # non-devouring hive mind
-					has_authority = auth_hive_mind
-					NOT = { has_civic = civic_hive_devouring_swarm }
-					# Changed: Allow hive to assimilate robots
-				}
-				AND = {
-					has_tradition = tr_genetics_creation
-					NOT = { has_ethic = ethic_gestalt_consciousness }
-				}
+				# Changed: Allow hive to assimilate robots
 				AND = {
 					has_tradition = tr_synthetics_synthetic_age # synth assimilation
 					NOT = { has_authority = auth_machine_intelligence }
 				}
+				has_tradition = tr_genetics_creation # Changed: genetic assimilation
 				has_tradition = tr_cybernetics_transubstantiation_synthesis # cybernetic assimilation
 				has_tradition = tr_psionics_psionic_assimilation # psionic assimilation
 			}
