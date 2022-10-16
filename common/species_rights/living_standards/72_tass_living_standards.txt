@@ -8,11 +8,9 @@ living_standard_psi_assimilation = {
 	}
 
 	potential = {
+		# Changed: Display for all empires
 		host_has_dlc = "Utopia"
 		exists = from
-		from = {
-			has_tradition = tr_psionics_psionic_assimilation
-		}
 	}
 
 	allow = {
