@@ -1,6 +1,6 @@
-version="0.0.1"
+version="2.0.0"
 tags={
 	"Species"
 }
 name="Total Assimilation"
-supported_version="2.8.1"
+supported_version="3.6.*"
