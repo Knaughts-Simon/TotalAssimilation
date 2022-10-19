@@ -19,7 +19,7 @@ citizenship_assimilation = {
 					has_civic = civic_machine_assimilator
 					# Changed: Allow Driven Assimilator to assimilate cybernetics/robots/machines
 				}
-				AND = { # machine assimilator
+				AND = { # machine
 					has_authority = auth_machine_intelligence
 					has_active_tradition = tr_synthetics_adopt_machine
 					# Changed: Allow machine to assimilate non-robots
