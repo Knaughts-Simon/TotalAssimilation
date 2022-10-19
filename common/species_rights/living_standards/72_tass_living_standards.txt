@@ -2,7 +2,7 @@
 
 # from = country
 # this = species
-living_standard_psi_assimilation = {
+living_standard_total_assimilation = {
 	pop_modifier = {
 		pop_happiness = -0.25
 	}

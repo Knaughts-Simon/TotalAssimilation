@@ -12,19 +12,18 @@ Special thanks to [url=https://github.com/quetzatcoatl/Stellaris-Moding-Assets]T
 
 [h2]Installation[/h2]
 
-Since citizenship types and living standards are hard-coded into the game, we needed to overwrite three vanilla objects. This means the mod needs to be low in your load-list, and that it will conflict with any other mods that override these objects.
+For ease of implementation, we overwrite two vanilla objects. This means the mod needs to be low in your load-list, and that it will conflict with any other mods that override these objects.
 
 [code]
 assimilation_effect
 citizenship_assimilation
-living_standard_psi_assimilation
 [/code]
 
-If you're running a mod that overrides any of these, try using [url=https://bcssov.github.io/IronyModManager/]Irony Mod Manager[/url] to resolve the conflict.
+If you're running a mod that overrides any of these, try using [url=https://bcssov.github.io/IronyModManager/]Irony Mod Manager[/url] to resolve the conflict. If that doesn't work, let us know in the comments.
 
 [h2]Feedback[/h2]
 
-Feedback is welcome in the comments, but look at Known Issues below, first.
+Feedback is quite welcome in the comments, but look at Known Issues below, first.
 
 [h2]Known Issues[/h2]
 Since these are minor and/or nontrivial to fix, I have no immediate plans to fix them. Let me know in comments if it particularly irks you.
