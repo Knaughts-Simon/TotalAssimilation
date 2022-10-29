@@ -1,7 +1,10 @@
 # From common\events\on_action_events_1.txt#7949
-# Assimilate Pops on Yearly Pulse
+# Total Assimilate Pops on Yearly Pulse
+
+namespace = tass
+
 event = {
-	id = action.64
+	id = tass.1
 	hide_window = yes
 	is_triggered_only = yes
 
@@ -18,7 +21,7 @@ event = {
 	}
 
 	immediate = {
-		log = "action.64"
+		log = "tass.1"
 		set_update_modifiers_batch = begin
 		every_playable_country = {
 			limit = {
@@ -30,7 +33,7 @@ event = {
 					}
 				}
 			}
-			log = "action.64.epc"
+			log = "tass.1.epc"
 
 			if = { # ascended synths
 				limit = {
@@ -229,16 +232,16 @@ event = {
 			}
 
 			every_owned_planet = {
-				planet_event = { id = action.65 }
+				planet_event = { id = tass.2 }
 			}
 		}
 		set_update_modifiers_batch = end
 	}
 }
 
-# Assimilate Pops
+# Total Assimilate Pops
 planet_event = {
-	id = action.65
+	id = tass.2
 	hide_window = yes
 	is_triggered_only = yes
 
