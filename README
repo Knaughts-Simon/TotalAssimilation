@@ -2,13 +2,19 @@ Assimilation does more.
 
 Specifically:
 [olist]
-    [*]As soon as you can assimilate any species, you can assimilate every species. Yes, this includes Determined Exterminator (after they adopt Synthetics).
-    [*]All assimilation is by replacement rather than by modifying traits. This functions much the same way synthetically ascended empires normally assimilate.
+    [*]As soon as you can assimilate any species, you can Total Assimilate every species. Yes, this includes Determined Exterminator (after they adopt Synthetics).
+    [*]Total Assimilation is by replacement rather than by modifying traits. This functions much the same way synthetically ascended empires normally assimilate.
 [/olist]
 
-Special thanks to [url=https://github.com/quetzatcoatl/Stellaris-Moding-Assets]Tom Stone[/url] for the thumbnail!
+For easier compatibility, there are two other minor differences between the Citizenship Types [b]Assimilation[/b] and [b]Total Assimilation[/b]:
+[olist]
+    [*]Total Assimilation does not contribute to planetary revolts.
+    [*]Total Assimilation pops may leave as refugees if land is appropriated.
+[/olist]
 
 [img]https://i.imgur.com/fVVaDCS.gif[/img]
+
+Special thanks to [url=https://github.com/quetzatcoatl/Stellaris-Moding-Assets]Tom Stone[/url] for the thumbnail!
 
 [h2]Installation[/h2]
 
