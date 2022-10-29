@@ -1,6 +1,6 @@
 # From common\pop_jobs\00_other_jobs.txt#607
 
-assimilation = {
+total_assimilation = {
 	category = assimilation
 	is_capped_by_modifier = no
 	clothes_texture_index = 2

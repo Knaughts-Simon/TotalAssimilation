@@ -54,7 +54,7 @@ event = {
 								has_active_tradition = tr_synthetics_adopt_machine
 							}
 						}
-						# Deliberately do nothing here, see assimilation_effect
+						# Deliberately do nothing here, see total_assimilation_effect
 					}
 					else_if = { # assimilator empire or cyborg empire
 						limit = {
@@ -272,7 +272,7 @@ planet_event = {
 							value > 0
 						}
 					}
-					assimilation_effect = yes
+					total_assimilation_effect = yes
 				}
 			}
 
@@ -295,7 +295,7 @@ planet_event = {
 							value > 0
 						}
 					}
-					assimilation_effect = yes
+					total_assimilation_effect = yes
 				}
 			}
 
@@ -318,7 +318,7 @@ planet_event = {
 							value > 0
 						}
 					}
-					assimilation_effect = yes
+					total_assimilation_effect = yes
 				}
 			}
 		}
@@ -350,7 +350,7 @@ planet_event = {
 						value > 0
 					}
 				}
-				assimilation_effect = yes
+				total_assimilation_effect = yes
 			}
 			set_variable = {
 				which = assimilation_counter

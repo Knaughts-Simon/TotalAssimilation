@@ -1,7 +1,7 @@
 # From common\scripted_effects\00_scripted_effects.txt#4972
 
 # root/this = planet
-assimilation_effect = {
+total_assimilation_effect = {
 	random_owned_pop = {
 		limit = {
 			has_citizenship_type = {

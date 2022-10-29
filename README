@@ -19,14 +19,7 @@ Special thanks to [url=https://github.com/quetzatcoatl/Stellaris-Moding-Assets]T
 
 [h2]Installation[/h2]
 
-For ease of implementation, we overwrite two vanilla objects. This means the mod needs to be low in your load-list, and that it will conflict with any other mods that override these objects.
-
-[code]
-assimilation_effect
-citizenship_total_assimilation
-[/code]
-
-If you're running a mod that overrides any of these, try using [url=https://bcssov.github.io/IronyModManager/]Irony Mod Manager[/url] to resolve the conflict. If that doesn't work, let us know in the comments.
+Since this mod creates all new objects, it should not conflict with any other mod.
 
 [h2]Feedback[/h2]
 
