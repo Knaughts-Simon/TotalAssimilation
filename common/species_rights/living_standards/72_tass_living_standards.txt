@@ -9,6 +9,7 @@ living_standard_psi_assimilation = {
 
 	potential = {
 		host_has_dlc = "Utopia"
+		NOT = { has_trait = trait_cybernetic }
 		exists = from
 		from = {
 			has_tradition = tr_psionics_psionic_assimilation

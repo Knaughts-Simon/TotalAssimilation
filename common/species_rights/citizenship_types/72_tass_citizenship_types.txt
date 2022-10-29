@@ -12,20 +12,37 @@ citizenship_assimilation = {
 		}
 		exists = from
 		from = {
-			is_homicidal = no
 			OR = {
-				AND = { # machine assimilator
+				is_homicidal = no
+				AND = {
+					has_civic = civic_machine_terminator
+					has_active_tradition = tr_synthetics_adopt_machine
+					root = {
+						is_robotic_species = yes
+					}
+				}
+			}
+			OR = {
+				AND = { # machine cyborg assimilator
 					has_authority = auth_machine_intelligence
 					has_civic = civic_machine_assimilator
-					root = {
-						NOR = {
-							has_trait = trait_mechanical
-							has_trait = trait_machine_unit
-							has_trait = trait_cybernetic
+					OR = {
+						AND = {
+							has_active_tradition = tr_synthetics_adopt_machine
+							root = {
+								is_robotic_species = yes
+							}
+						}
+						root = {
+							NOR = {
+								has_trait = trait_mechanical
+								has_trait = trait_machine_unit
+								has_trait = trait_cybernetic
+							}
 						}
 					}
 				}
-				AND = { # machine assimilator
+				AND = { # machine synthetic assimilator
 					has_authority = auth_machine_intelligence
 					has_active_tradition = tr_synthetics_adopt_machine
 					root = {
@@ -42,7 +59,7 @@ citizenship_assimilation = {
 					NOT = { has_ethic = ethic_gestalt_consciousness }
 				}
 				AND = {
-					has_tradition = tr_synthetics_synthetic_age # synth assimilation
+					has_country_flag = synth_assimilation # synth assimilation
 					NOT = { has_authority = auth_machine_intelligence }
 				}
 				has_tradition = tr_cybernetics_transubstantiation_synthesis # cybernetic assimilation
@@ -108,18 +125,6 @@ citizenship_assimilation = {
 		}
 		else_if = {
 			limit = {
-				from = { has_country_flag = synthetic_empire }
-			}
-			custom_tooltip = { # synthetically ascended empire
-				fail_text = SYNTH_SPECIES_MUST_BE_ORGANIC
-				NOR = {
-					has_trait = trait_mechanical
-					has_trait = trait_machine_unit
-				}
-			}
-		}
-		else_if = {
-			limit = {
 				from = { has_tradition = tr_cybernetics_transubstantiation_synthesis }
 			}
 			custom_tooltip = { # cyborg empire
@@ -138,7 +143,6 @@ citizenship_assimilation = {
 			custom_tooltip = { # species must be organic to transcend
 				fail_text = TRANSCENDING_SPECIES_MUST_BE_ORGANIC
 				is_robotic_species = no
-				NOT = { has_trait = trait_cybernetic }
 			}
 			custom_tooltip = { # species already has psionic trait
 				fail_text = TRANSCENDING_SPECIES_IS_ALREADY_PSIONIC
