@@ -2,7 +2,7 @@
 
 # from = country
 # this = species
-citizenship_assimilation = {
+citizenship_total_assimilation = {
 	is_assimilation = yes
 
 	potential = {

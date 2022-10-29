@@ -5,7 +5,7 @@ assimilation_effect = {
 	random_owned_pop = {
 		limit = {
 			has_citizenship_type = {
-				type = citizenship_assimilation
+				type = citizenship_total_assimilation
 				country = root.owner
 			}
 		}

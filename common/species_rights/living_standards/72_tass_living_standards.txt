@@ -16,9 +16,9 @@ living_standard_total_assimilation = {
 			exists = from
 		}
 		custom_tooltip = {
-			fail_text = SPECIES_MUST_BE_ASSIMILATING
+			fail_text = SPECIES_MUST_BE_TOTAL_ASSIMILATING
 			has_citizenship_type = {
-				type = citizenship_assimilation
+				type = citizenship_total_assimilation
 				country = from
 			}
 		}

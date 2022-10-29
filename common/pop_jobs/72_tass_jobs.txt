@@ -12,7 +12,7 @@ assimilation = {
 	ignores_sapience = yes
 
 	possible = {
-		has_citizenship_type = { type = citizenship_assimilation }
+		has_citizenship_type = { type = citizenship_total_assimilation }
 	}
 
 	resources = {

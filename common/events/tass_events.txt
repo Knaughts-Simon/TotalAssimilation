@@ -10,7 +10,7 @@ event = {
 			num_unique_species > 1
 			any_owned_species = {
 				has_citizenship_type = {
-					type = citizenship_assimilation
+					type = citizenship_total_assimilation
 					country = prev
 				}
 			}
@@ -25,7 +25,7 @@ event = {
 				num_unique_species > 1
 				any_owned_species = {
 					has_citizenship_type = {
-						type = citizenship_assimilation
+						type = citizenship_total_assimilation
 						country = prev
 					}
 				}
@@ -39,7 +39,7 @@ event = {
 				every_owned_species = {
 					limit = {
 						has_citizenship_type = {
-							type = citizenship_assimilation
+							type = citizenship_total_assimilation
 							country = prev
 						}
 					}
@@ -245,7 +245,7 @@ planet_event = {
 	trigger = {
 		any_owned_species = {
 			has_citizenship_type = {
-				type = citizenship_assimilation
+				type = citizenship_total_assimilation
 				country = root.owner
 			}
 		}
@@ -263,7 +263,7 @@ planet_event = {
 					limit = {
 						any_owned_pop = {
 							has_citizenship_type = {
-								type = citizenship_assimilation
+								type = citizenship_total_assimilation
 								country = root.owner
 							}
 						}
@@ -286,7 +286,7 @@ planet_event = {
 					limit = {
 						any_owned_pop = {
 							has_citizenship_type = {
-								type = citizenship_assimilation
+								type = citizenship_total_assimilation
 								country = root.owner
 							}
 						}
@@ -309,7 +309,7 @@ planet_event = {
 					limit = {
 						any_owned_pop = {
 							has_citizenship_type = {
-								type = citizenship_assimilation
+								type = citizenship_total_assimilation
 								country = root.owner
 							}
 						}
@@ -341,7 +341,7 @@ planet_event = {
 				limit = {
 					any_owned_pop = {
 						has_citizenship_type = {
-							type = citizenship_assimilation
+							type = citizenship_total_assimilation
 							country = root.owner
 						}
 					}

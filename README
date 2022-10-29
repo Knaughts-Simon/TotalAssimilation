@@ -2,7 +2,7 @@ Assimilation does more.
 
 Specifically:
 [olist]
-    [*]As soon as you can assimilate any species, you can Total Assimilate every species. Yes, this includes Determined Exterminator (after they adopt Synthetics).
+    [*]As soon as you can [b]Assimilate[/b] any species, you can [b]Total Assimilate[/b] every species. Yes, this includes Determined Exterminator (after they adopt Synthetics).
     [*]Total Assimilation is by replacement rather than by modifying traits. This functions much the same way synthetically ascended empires normally assimilate.
 [/olist]
 
@@ -10,6 +10,7 @@ For easier compatibility, there are two other minor differences between the Citi
 [olist]
     [*]Total Assimilation does not contribute to planetary revolts.
     [*]Total Assimilation pops may leave as refugees if land is appropriated.
+    [*]Total Assimilation pops may have normal Living Standards while assimilating.
 [/olist]
 
 [img]https://i.imgur.com/fVVaDCS.gif[/img]
@@ -22,7 +23,7 @@ For ease of implementation, we overwrite two vanilla objects. This means the mod
 
 [code]
 assimilation_effect
-citizenship_assimilation
+citizenship_total_assimilation
 [/code]
 
 If you're running a mod that overrides any of these, try using [url=https://bcssov.github.io/IronyModManager/]Irony Mod Manager[/url] to resolve the conflict. If that doesn't work, let us know in the comments.
