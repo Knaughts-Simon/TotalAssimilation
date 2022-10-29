@@ -1,0 +1,6 @@
+﻿l_english:
+ SPECIES_MUST_BE_ASSIMILATING:1 "$TRIGGER_FAIL$Species must have §Y$citizenship_assimilation$§! citizenship."
+ SPECIES_MUST_NOT_BE_ASSIMILATING:1 "$TRIGGER_FAIL$Species must not have §Y$citizenship_assimilation$§! citizenship." 
+ citizenship_assimilation:0 "Assimilation"
+ citizenship_assimilation_tooltip:0 "Pops of this species are §Yaltered§! over time to better match the dominant species of the Empire. Pops that are in the process of being assimilated will not produce any resources."
+ citizenship_assimilation_tooltip_delayed:0 "§LWe will add your biological and technological distinctiveness to our own. Your culture will adapt to service us.§!"
