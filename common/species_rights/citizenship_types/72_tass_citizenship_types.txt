@@ -12,21 +12,24 @@ citizenship_assimilation = {
 		}
 		exists = from
 		from = {
-			is_homicidal = no
+			OR = {
+				is_homicidal = no
+				AND = {
+					has_civic = civic_machine_terminator
+					has_active_tradition = tr_synthetics_adopt_machine
+				}
+			}
 			OR = {
 				AND = { # machine assimilator
 					has_authority = auth_machine_intelligence
 					has_civic = civic_machine_assimilator
-					# Changed: Allow Driven Assimilator to assimilate cybernetics/robots/machines
 				}
-				AND = { # machine
+				AND = { # machine non-assimilator
 					has_authority = auth_machine_intelligence
 					has_active_tradition = tr_synthetics_adopt_machine
-					# Changed: Allow machine to assimilate non-robots
 				}
-				# Changed: Allow hive to assimilate robots
 				AND = {
-					has_tradition = tr_synthetics_synthetic_age # synth assimilation
+					has_country_flag = synth_assimilation # synth assimilation
 					NOT = { has_authority = auth_machine_intelligence }
 				}
 				has_tradition = tr_genetics_creation # Changed: genetic assimilation
