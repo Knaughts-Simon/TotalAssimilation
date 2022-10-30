@@ -2,6 +2,7 @@
 
 total_assimilation = {
 	category = assimilation
+	icon = assimilation
 	is_capped_by_modifier = no
 	clothes_texture_index = 2
 
