@@ -1,4 +1,4 @@
-# From common\events\on_action_events_1.txt#7949
+# From events\on_action_events_1.txt#7949
 # Total Assimilate Pops on Yearly Pulse
 
 namespace = tass
