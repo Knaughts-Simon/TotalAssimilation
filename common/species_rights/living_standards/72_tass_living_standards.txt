@@ -1,4 +1,4 @@
-# From common\species_rights\01_living_standards.txt#146
+# From common\species_rights\01_living_standards.txt#374
 
 # from = country
 # this = species
