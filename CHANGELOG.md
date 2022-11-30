@@ -5,6 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.0.0] - 2022-11-29
+
+Major changes to accommodate Ascension Path Rework in 3.6 Orion.
+
+### Changed
+- Splits Total Assimilation from vanilla Assimilation (jobs, citizenship types, and living standards). This makes the mod compatible with most other mods, since nothing is overwritten.
+- Simplifies the conditions under which Total Assimilation is permitted: as soon as you can Assimilate _any_ species, you can Total Assimilate _every_ species.
+
 ## [1.0.1] - 2022-10-04
 
 Confirms compatibility with Stellaris 3.5.*, in anticipation of temporary incompatibility with 3.6.0.
