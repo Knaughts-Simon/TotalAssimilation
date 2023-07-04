@@ -5,5 +5,5 @@ tags={
 }
 name="Total Assimilation [v2]"
 picture="thumbnail.png"
-supported_version="3.6.*"
+supported_version="3.8.*"
 remote_file_id="2296011997"
