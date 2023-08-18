@@ -1,0 +1,12 @@
+﻿l_russian:
+ SPECIES_MUST_BE_TOTAL_ASSIMILATING:1 "$TRIGGER_FAIL$Виды должны иметь §Y$citizenship_total_assimilation$§! гражданство."
+ SPECIES_MUST_NOT_BE_TOTAL_ASSIMILATING:1 "$TRIGGER_FAIL$Виды не должны иметь §Y$citizenship_total_assimilation$§! гражданство." # Not used
+ citizenship_total_assimilation:0 "Тотальная Ассимиляция"
+ citizenship_total_assimilation_tooltip:0 "Поселения этой расы §Yизменяются§! со временем, чтобы точно соответствовать доминирующим видам нашей Империи. Поселения, находящиеся в процессе ассимиляции, не будут производить никаких ресурсов."
+ citizenship_total_assimilation_tooltip_delayed:0 "§LОни будут перенимать наши биологические и технологические особенности. В итоге, их культура будет адаптироваться, чтобы обслуживать нас.§!"
+ job_total_assimilation:0 "Подвергается тотальной ассимиляции"
+ job_total_assimilation_plural:0 "$job_total_assimilation$"
+ job_total_assimilation_desc:0 "Это поселение интегрируется в наше общество."
+ living_standard_total_assimilation:0 "Тотальная Ассимиляция"
+ living_standard_total_assimilation_tooltip:0 "Мы объединяем эту расу с нашей."
+ living_standard_total_assimilation_tooltip_delayed:0 ""
