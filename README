@@ -32,3 +32,10 @@ Since these are minor and/or nontrivial to fix, I have no immediate plans to fix
     [*]The Driven Assimilator Colossus weapon, Nanobot Diffuser, is implemented completely independently from assimilation, so its immediate effect is unaffected by this mod. That means it kills drones, and converts organics to cyborgs. These cyborgs can be converted, gradually, into the primary species of the Driven Assimilator via Total Assimilation.
     [*]The Total Assimilation Living Standard is visible (but not selectable until you qualify) from the beginning of the game. This has no mechanical effect, and makes the mod slightly easier to maintain.
 [/list]
+
+[h2]Localisation[/h2]
+Send me a pastebin like [url=https://pastebin.com/GebfkFQp]this one[/url] if you'd like me to add support for an additional language.
+[list]
+    [*]English - Native mod language
+    [*]Russian - by [url=https://steamcommunity.com/profiles/76561197999970989]HUTIN PUILO[/url]
+[/list]
