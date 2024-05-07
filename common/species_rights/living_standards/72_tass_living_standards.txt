@@ -1,4 +1,4 @@
-# From common\species_rights\01_living_standards.txt#374
+# From common\species_rights\01_assimilation_living_standards.txt#382
 
 # from = country
 # this = species
@@ -8,7 +8,12 @@ living_standard_total_assimilation = {
 	}
 	potential = {
 		# Changed: Display for all empires
-		host_has_dlc = "Utopia"
+		# Changed: Check for all DLC that allows any sort of assimilation
+		OR = {
+			has_utopia = yes
+			has_machine_age_dlc = yes
+			has_synthetic_dawn = yes
+		}
 		exists = from
 	}
 	allow = {

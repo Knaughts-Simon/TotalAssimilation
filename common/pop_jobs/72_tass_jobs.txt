@@ -1,4 +1,4 @@
-# From common\pop_jobs\00_other_jobs.txt#607
+# From common\pop_jobs\00_other_jobs.txt#663
 
 total_assimilation = {
 	category = assimilation
@@ -13,7 +13,8 @@ total_assimilation = {
 	ignores_sapience = yes
 
 	possible = {
-		has_citizenship_type = { type = citizenship_total_assimilation }
+		exists = owner
+		has_citizenship_type = { type = citizenship_assimilation country = owner }
 	}
 
 	resources = {
