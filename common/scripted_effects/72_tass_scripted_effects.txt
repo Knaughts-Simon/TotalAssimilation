@@ -1,4 +1,4 @@
-# From common\scripted_effects\00_scripted_effects.txt#4972
+# From common\scripted_effects\00_scripted_effects.txt#3883
 
 # root/this = planet
 assimilation_effect = {
@@ -20,9 +20,11 @@ assimilation_effect = {
 							has_trait = trait_mechanical
 							has_trait = trait_machine_unit
 						}
-						root.owner = {
-							has_authority = auth_machine_intelligence
-							has_active_tradition = tr_synthetics_adopt_machine
+						OR = {
+							root.owner = {
+								has_authority = auth_machine_intelligence
+							}
+							root.owner = { is_individual_machine = yes }
 						}
 					}
 				}

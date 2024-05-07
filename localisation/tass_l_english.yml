@@ -1,4 +1,5 @@
 ﻿l_english:
+ HIVE_SPECIES_MUST_BE_NON_HIVE:2 "$TRIGGER_FAIL$Requires Tradition §Y$tr_genetics_creation$§! or §Y$tr_cybernetics_integrated_anatomy$§!. Only organic non-§Y$trait_hive_mind$§! species can be assimilated."
  SPECIES_MUST_BE_ASSIMILATING:1 "$TRIGGER_FAIL$Species must have §Y$citizenship_assimilation$§! citizenship."
  SPECIES_MUST_NOT_BE_ASSIMILATING:1 "$TRIGGER_FAIL$Species must not have §Y$citizenship_assimilation$§! citizenship." 
  citizenship_assimilation:0 "Assimilation"

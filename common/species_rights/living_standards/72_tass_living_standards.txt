@@ -1,4 +1,4 @@
-# From common\species_rights\01_living_standards.txt#374
+# From common\species_rights\01_assimilation_living_standards.txt#382
 
 # from = country
 # this = species
@@ -8,7 +8,7 @@ living_standard_psi_assimilation = {
 	}
 
 	potential = {
-		host_has_dlc = "Utopia"
+		has_utopia = yes
 		NOT = { has_trait = trait_cybernetic }
 		exists = from
 		from = {

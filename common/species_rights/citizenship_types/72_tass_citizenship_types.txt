@@ -1,4 +1,4 @@
-# From common\species_rights\00_citizenship_types.txt#107
+# From common\species_rights\00_citizenship_types.txt#163
 
 # from = country
 # this = species
@@ -7,16 +7,22 @@ citizenship_assimilation = {
 
 	potential = {
 		OR = {
-			host_has_dlc = "Synthetic Dawn Story Pack"
-			host_has_dlc = "Utopia"
+			has_synthetic_dawn = yes
+			has_utopia = yes
+			has_machine_age_dlc = yes
 		}
 		exists = from
 		from = {
 			OR = {
 				is_homicidal = no
 				AND = {
+					is_homicidal = yes
+					root = {
+						is_same_species = prev
+					}
+				}
+				AND = {
 					has_civic = civic_machine_terminator
-					has_active_tradition = tr_synthetics_adopt_machine
 					root = {
 						is_robotic_species = yes
 					}
@@ -28,7 +34,6 @@ citizenship_assimilation = {
 					has_civic = civic_machine_assimilator
 					OR = {
 						AND = {
-							has_active_tradition = tr_synthetics_adopt_machine
 							root = {
 								is_robotic_species = yes
 							}
@@ -44,26 +49,38 @@ citizenship_assimilation = {
 				}
 				AND = { # machine synthetic assimilator
 					has_authority = auth_machine_intelligence
-					has_active_tradition = tr_synthetics_adopt_machine
 					root = {
 						is_robotic_species = yes
 					}
 				}
-				AND = { # non-devouring hive mind
-					has_authority = auth_hive_mind
-					NOT = { has_civic = civic_hive_devouring_swarm }
-					ROOT = { is_robotic_species = no }
-				}
 				AND = {
-					has_tradition = tr_genetics_creation
-					NOT = { has_ethic = ethic_gestalt_consciousness }
+					OR = {
+						AND = {
+							# non-devouring hive mind
+							has_authority = auth_hive_mind
+							NOT = { has_civic = civic_hive_devouring_swarm }
+						}
+						# Regular empire
+						AND = {
+							NOT = { has_ethic = ethic_gestalt_consciousness }
+							is_individual_machine = no
+						}
+					}
+					OR = {
+						has_active_tradition = tr_genetics_creation	# genetic assimilation
+						has_active_tradition = tr_cybernetics_transubstantiation_synthesis # cybernetic assimilation
+					}
+					ROOT = { is_robotic_species = no }
 				}
 				AND = {
 					has_country_flag = synth_assimilation # synth assimilation
 					NOT = { has_authority = auth_machine_intelligence }
 				}
-				has_tradition = tr_cybernetics_transubstantiation_synthesis # cybernetic assimilation
-				has_tradition = tr_psionics_psionic_assimilation # psionic assimilation
+				has_active_tradition = tr_psionics_psionic_assimilation # psionic assimilation
+				AND = {
+					is_individual_machine = yes
+					ROOT = { is_robotic_species = yes }
+				}
 			}
 		}
 	}
@@ -75,21 +92,30 @@ citizenship_assimilation = {
 			NOT = { is_exact_same_species = from }
 		}
 		custom_tooltip = {
+			fail_text = "pre_sapients_citizenship"
+			is_sapient = yes
+		}
+		custom_tooltip = {
 			fail_text = "lonely_hive_mind_pops_kill_themselves_citizenship_assimilation"
 			if = {
 				limit = { is_lonely_hive_mind_pop = yes }
 				from = {
 					OR = {
-						has_tradition = tr_genetics_creation
-						has_tradition = tr_cybernetics_transubstantiation_synthesis
-						has_tradition = tr_cybernetics_assimilator_inevitable_assimilation
+						has_active_tradition = tr_genetics_creation
+						has_active_tradition = tr_cybernetics_transubstantiation_synthesis
+						has_active_tradition = tr_cybernetics_assimilator_inevitable_assimilation
 					}
 				}
 			}
 		}
 		custom_tooltip = {
 			fail_text = "disconnected_machine_pops_collapse_citizenship"
-			is_disconnected_machine_pop = no
+			OR = {
+				from = {
+					has_country_flag = synth_assimilation
+				}
+				is_disconnected_machine_pop = no
+			}
 		}
 		if = {
 			limit = {
@@ -100,22 +126,19 @@ citizenship_assimilation = {
 			custom_tooltip = { # machine assimilator
 				fail_text = MACHINE_SPECIES_MUST_BE_ORGANIC
 			}
-			custom_tooltip = { 
+			custom_tooltip = {
 				fail_text = requires_tradition_tr_synthetics_adopt
 			}
 		}
 		else_if = {
 			limit = {
-				from = { has_authority = auth_hive_mind }
+				from = {
+					has_authority = auth_hive_mind
+					has_active_tradition = tr_genetics_creation
+				}
 			}
 			custom_tooltip = { # non-devouring hive mind
 				fail_text = HIVE_SPECIES_MUST_BE_NON_HIVE
-				from = {
-					OR = {
-						has_tradition = tr_genetics_creation
-						has_tradition = tr_cybernetics_transubstantiation_synthesis
-					}
-				}
 				NOR = {
 					has_trait = trait_hive_mind
 					has_trait = trait_mechanical
@@ -125,20 +148,61 @@ citizenship_assimilation = {
 		}
 		else_if = {
 			limit = {
-				from = { has_tradition = tr_cybernetics_transubstantiation_synthesis }
+				from = {
+					has_authority = auth_hive_mind
+					has_active_tradition = tr_cybernetics_transubstantiation_synthesis
+				}
 			}
-			custom_tooltip = { # cyborg empire
-				fail_text = CYBORG_SPECIES_MUST_BE_ORGANIC
+			custom_tooltip = { # non-devouring hive mind
+				fail_text = HIVE_SPECIES_MUST_BE_NON_HIVE
 				NOR = {
 					has_trait = trait_mechanical
 					has_trait = trait_machine_unit
-					has_trait = trait_cybernetic
+					AND = {
+						has_trait = trait_hive_mind
+						has_trait = trait_cybernetic
+					}
 				}
 			}
 		}
 		else_if = {
 			limit = {
-				from = { has_tradition = tr_psionics_psionic_assimilation }
+				from = {
+					NOT = { has_authority = auth_hive_mind }
+					has_active_tradition = tr_cybernetics_transubstantiation_synthesis
+				}
+			}
+			custom_tooltip = { # cyborg empire
+				fail_text = CYBORG_SPECIES_MUST_BE_ORGANIC
+				OR = {
+					AND = {
+						has_trait = trait_hive_mind
+						from = {
+							NOT = {
+								has_authority = auth_hive_mind
+							}
+						}
+					}
+					AND = {
+						NOT = {
+							has_trait = trait_hive_mind
+						}
+						from = {
+							has_authority = auth_hive_mind
+						}
+					}
+					NOR = {
+						has_trait = trait_mechanical
+						has_trait = trait_machine_unit
+						has_trait = trait_cybernetic
+						has_trait = trait_limited_cybernetic
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				from = { has_active_tradition = tr_psionics_psionic_assimilation }
 			}
 			custom_tooltip = { # species must be organic to transcend
 				fail_text = TRANSCENDING_SPECIES_MUST_BE_ORGANIC
@@ -155,7 +219,7 @@ citizenship_assimilation = {
 		}
 		else_if = {
 			limit = {
-				from = { has_tradition = tr_genetics_creation }
+				from = { has_active_tradition = tr_genetics_creation }
 			}
 			custom_tooltip = {
 				fail_text = CAN_ONLY_ASSIMILATE_HIVES
@@ -174,6 +238,12 @@ citizenship_assimilation = {
 					has_valid_civic = civic_fanatic_purifiers
 					has_valid_civic = civic_machine_terminator
 				}
+			}
+		}
+		modifier = {
+			factor = 0.3
+			from = {
+				is_individual_machine = yes
 			}
 		}
 	}
