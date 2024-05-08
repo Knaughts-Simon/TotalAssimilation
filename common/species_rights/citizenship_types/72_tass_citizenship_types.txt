@@ -32,6 +32,7 @@ citizenship_total_assimilation = {
 			fail_text = MUST_NOT_BE_DOMINANT_SPECIES
 			NOT = { is_exact_same_species = from }
 		}
+		# Changed: All species-specific requirements are removed.
 	}
 
 	ai_will_do = {
