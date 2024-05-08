@@ -2,6 +2,7 @@
 
 # root/this = planet
 total_assimilation_effect = {
+	root.owner = {save_event_target_as = convert_to_species} # Saving species for post-assimilation effects
 	random_owned_pop = {
 		limit = {
 			has_citizenship_type = {
