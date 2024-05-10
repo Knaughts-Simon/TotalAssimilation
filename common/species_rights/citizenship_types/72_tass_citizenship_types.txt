@@ -16,12 +16,15 @@ citizenship_total_assimilation = {
 			OR = {
 				# Changed: (Non-assimilator) Machine empires were buffed in 3.12 to allow immediate assimilation of robots.
 				#          Since allowing them to immediately assimilate organics would rob Driven Assimilators of their uniqueness,
-				#          Machines cannot use TA. They can use vanilla assimilation as normal.
+				#          we delay Total Assimilation for them until they finish one of their three special ascension paths.
 				has_civic = civic_machine_assimilator # Changed: Driven Assimilator can assimilate anyone
 				has_country_flag = synth_assimilation # synth assimilation
 				has_active_tradition = tr_genetics_creation	# genetic assimilation
 				has_active_tradition = tr_cybernetics_transubstantiation_synthesis # cybernetic assimilation
 				has_active_tradition = tr_psionics_psionic_assimilation # psionic assimilation
+				has_active_tradition = tr_nanotech_finish # Machine Age: started machine ascension nanotech
+				has_active_tradition = tr_modularity_finish # Machine Age: started machine ascension modularity
+				has_active_tradition = tr_virtuality_finish # Machine Age: started machine ascension virtuality
 			}
 		}
 	}

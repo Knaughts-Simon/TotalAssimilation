@@ -5,6 +5,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.2.0] - 2024-05-10
+
+Updates to support v3.12 (Machine Age).
+
+### Added
+- The buff (in vanilla) to Inevitable Assimilation, increasing the size of assimilation waves by 1-3 instead of 1, has been carried over to Total Assimilation.
+
+### Changed
+- Machine empires (whether gestalt or individual) can Total Assimilate after they finish one of their three unique ascension paths. [i]Now that machine empires can assimilate any robotic species at game start, it would be unbalanced, and a bit unfair to Driven Assimilators, to allow them to immediately Total Assimilate all species. Instead, we pick a different point in progression that assimilation tends to happen for other empires.[/i]
+
+
 ## [2.1.0] - 2023-08-18
 
 ### Added

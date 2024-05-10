@@ -1,14 +1,27 @@
 Assimilation does more.
 
-Specifically:
 [olist]
-    [*]As soon as you can [b]Assimilate[/b] any species, you can [b]Total Assimilate[/b] every species. Yes, this includes Determined Exterminator (after they adopt Synthetics).
+    [*]In general, as soon as you can [b]Assimilate[/b] any species, you can [b]Total Assimilate[/b] every species. See specifics below.
     [*]Total Assimilation is by replacement rather than by modifying traits. This functions much the same way synthetically ascended empires normally assimilate.
 [/olist]
+
+Specifically, you can Total Assimilate any species into your primary species when one of these is true:
+[olist]
+    [*]You are a Driven Assimilator
+    [*]You have completed the special project for synthetic evolution 
+    [*]You have the tradition Engineered Genesis, from the genetic ascension path
+    [*]You have the tradition Transubstantiation Synthesis, from the cybernetics ascension path (and the synthetic path for machines, if you lack the Machine Age DLC)
+    [*]You have the tradition Great Awakening, from the psionic ascension path
+    [*]You've finished the Nanotech tradition tree, one of the Machine Age DLC ascension paths for machines
+    [*]You've finished the Modularity tradition tree, one of the Machine Age DLC ascension paths for machines
+    [*]You've finished the Virtuality tradition tree, one of the Machine Age DLC ascension paths for machines
+[/olist]
+
 
 For easier compatibility, there are three other minor differences between the Citizenship Types [b]Assimilation[/b] and [b]Total Assimilation[/b]:
 [olist]
     [*]Total Assimilation does not contribute to planetary revolts.
+    [*]Total Assimilation will [i]not[/i] cause a breach of the Universal Prosperity Mandate resolution, unlike Identity Sublimation.
     [*]Total Assimilation pops may leave as refugees if land is appropriated.
     [*]Total Assimilation pops may have normal Living Standards while assimilating.
 [/olist]
